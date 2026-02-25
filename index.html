@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cine Converter | Processador Independente de Listas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --cc-bg: #0f1113;
+        --cc-surface: #1a1d21;
+        --cc-primary: #3d7a74;
+        --cc-primary-light: #4d9a92;
+        --cc-secondary: #d68a5e;
+        --cc-text-muted: #8a949e;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--cc-bg);
+        color: #e5e7eb;
+        margin: 0;
+        overflow-x: hidden;
+        height: 100vh;
+        width: 100vw;
+        -webkit-font-smoothing: antialiased;
+        background-image: 
+          radial-gradient(circle at 50% 50%, rgba(61, 122, 116, 0.05) 0%, rgba(15, 17, 19, 1) 90%),
+          url('https://www.transparenttextures.com/patterns/film-grain.png');
+        background-attachment: fixed;
+      }
+      
+      #root {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cc-card {
+        background-color: rgba(26, 29, 33, 0.7);
+        border: 1px solid rgba(255,255,255,0.05);
+        border-radius: 12px;
+        backdrop-filter: blur(16px);
+      }
+      
+      .cc-btn-primary {
+        background-color: var(--cc-primary);
+        color: #fff;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+      }
+      
+      .cc-btn-primary:hover:not(:disabled) {
+        background-color: var(--cc-primary-light);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(61, 122, 116, 0.3);
+      }
+
+      .cc-btn-primary:disabled {
+        opacity: 0.3;
+        cursor: not-allowed;
+      }
+      
+      .cc-btn-secondary {
+        background-color: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        color: #fff;
+        transition: all 0.2s ease;
+      }
+      
+      .cc-btn-secondary:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+      }
+      
+      .custom-scroll::-webkit-scrollbar { width: 4px; }
+      .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+      .custom-scroll::-webkit-scrollbar-thumb { background: rgba(61, 122, 116, 0.3); border-radius: 10px; }
+      .custom-scroll::-webkit-scrollbar-thumb:hover { background: rgba(61, 122, 116, 0.6); }
+      
+      @keyframes fade-in {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      .animate-cc-fade {
+        animation: fade-in 0.4s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      code {
+        font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.2.4/",
+        "react": "https://esm.sh/react@^19.2.4",
+        "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+        "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
