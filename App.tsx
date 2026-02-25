@@ -1,7 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { AppStep, Movie, ExtractionMode } from './types';
-import { parseFilmowData } from './services/geminiService';
 import { MovieTable } from './components/MovieTable';
 import { StepIndicator } from './components/StepIndicator';
 
